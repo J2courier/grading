@@ -12,60 +12,109 @@ void gotoxy(int x, int y) {
 }
 
 int main (){
-    char name[50], department[50];
+    char name[50], course[50], ans;
     int grade;
+    system("cls");
     do{
-        g(2,3);p("Enter name: ");
-    g(2,4);p("Enter Department: ");
-    g(2,5);p("Enter your grade in midterm: ");
-    g(14,3);gets(name);
-    g(20,4);s("%s", department);
-    g(31,5);s("%d", &grade);
+        ask:
+    g(2,3);p("STUDENT NAME: ");
+    g(2,4);p("COURSE/YEAR LEVEL: ");
+    g(2,5);p("MIDTERM GRADE: ");
+    g(20,3);s("%[^\n]", name);
+    //g(30,3);s("%[^\n]", name);
+    g(20,4);s("%[^\n]", course);
+    g(20,5);s("%d", &grade);
     if (grade > 50 && grade < 100){
         if (grade < 75){
-            g(2,6);p("5.0");
+            g(2,6);p("Equivalent grade is 5.0");
             g(2,7);p("Failed");
+            g(2, 8);p("Try Again? Y/N");
+            g(19, 8);s("%s", &ans);
+            system("cls");
         }
         else if (grade > 74 && grade < 77){
-            g(2,6);p("3.0");
+            g(2,6);p("Equivalent grade is 3.0");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 76 && grade < 81){
-            g(2,6);p("2.75");
+            g(2,6);p("Equivalent grade is 2.75");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 80 && grade < 84){
-            g(2,6);p("2.5");
+            g(2,6);p("Equivalent grade is 2.5");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 83 && grade < 87){
-            g(2,6);p("2.25");
+            g(2,6);p("Equivalent grade is 2.25");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 86 && grade < 90){
-            g(2,6);p("2.0");
+            g(2,6);p("Equivalent grade is 2.0");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 89 && grade < 93){
-            g(2,6);p("1.75");
+            g(2,6);p("Equivalent grade is 1.75");
             g(2,7);p("Passed");
+             g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 92 && grade < 96){
-            g(2,6);p("1.5");
+            g(2,6);p("Equivalent grade is 1.5");
             g(2,7);p("Passed");
+             g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+                        system("cls");
+
         }
         else if (grade > 95 && grade < 99){
-            g(2,6);p("1.25");
+            g(2,6);p("Equivalent grade is 1.25");
             g(2,7);p("Passed");
+             g(2, 8);p("Try Again? Y/N: \r");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
         else if (grade > 98 && grade < 101){
-            g(2,6);p("1.0");
+            g(2,6);p("Equivalent grade is 1.0");
             g(2,7);p("Passed");
+            g(2, 8);p("Try Again? Y/N:");
+            g(19, 8);s("%s", &ans);
+            system("cls");
+
         }
     }
+
     else{
         g(2, 8);p("INVALID INPUT");
+        g(2, 9);p("Try Again? Y/N:");
+        g(19, 9);s("%s", &ans);
+        system("cls");
+        
     }
-    } while();
+   } while(ans == 'y' || ans == 'Y');
+
+    exit(0);
     
 }
